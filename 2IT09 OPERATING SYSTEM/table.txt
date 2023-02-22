@@ -1,0 +1,4 @@
+name   rollno   city  phoneno
+rish   21IT401  Anand 9998217623
+da     21IT233  Nad   9833749389
+wu     21ME238  BG    8628638262

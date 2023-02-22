@@ -1,0 +1,101 @@
+shell variable 
+		print --> $SHELL
+			  $PATH
+			  $RANDOM
+			  $HOME
+			  
+			  ---> echo $SHELL
+
+for making child shell	  
+		      $sh --> parent shell
+		      $ -->child shell
+	  	
+	  	  
+user defined:
+	     export ---> for exporting value in child shell
+	
+	
+for reading --->
+	 	read n --> // like scanf
+	 	
+	  	 
+shell meta character: 
+			?	-|
+			>	 |
+			>>	 |
+			<	 | ---> '<' or "<" or \<
+			<<	 |
+			*	 |
+			! 	-|
+			echo ls * --> display all directory 
+			
+	  	     
+assigned or not --->  
+			echo ${p+defined} --> if assigned --> defined 
+						else	  --> //print nothing
+							      
+			echo ${x-abc}  ---> for temprory printing (only for one time)
+			
+			echo ${r=abc} ----> for permanent assigning and printing
+		
+			
+positional variable ---> 
+			set a 9 12 d e ---> // setting value
+			
+			echo $* ---> print all
+			      1 ---> first element
+			      |		|
+			      |		|
+			      n---> nth element
+		
+			
+calculation ---> 
+		$x=`expr 3 + 6`
+		
+		+,-,/,*
+		
+		--->for multiply ---> $x=`expr 3 "*" 6`
+						  --->"*",/x,'x'
+		
+shift ---> 
+		set a 9 12 d e ---> // setting value
+		shift ---> shifting by 1
+		
+		
+command line argument --->
+	
+		//the part where we do program
+test--->
+	q=6
+	test $q
+	echo $?
+		---> print 0
+	
+	test $q
+	echo $?
+		---> print 1
+
+
+comparision --->
+		--->test $x -eq $y
+			 echo $?
+			 ---> print 1/0
+			 
+		-eq  ---> equal
+		-ne --->not equal
+		-lt --->less than
+		-le --->less than equal
+		-gt --->greater than
+		-ge --->greater than equal
+		
+		
+Bitwise --->
+		--->test $x -o $y
+			 echo $?
+			 ---> print 1/0
+			 
+		-o ---> or
+		-a ---> and
+		-n ---> not		
+      
+			
