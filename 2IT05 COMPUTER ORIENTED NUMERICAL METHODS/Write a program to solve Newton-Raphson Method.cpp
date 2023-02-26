@@ -5,9 +5,13 @@ float fun(double x)
 {
     return (pow(x,3) + pow(x,2) -1);
 }
-double g(double x)
+double fun2(double x)
 {
-    return (1/(sqrt(x+1)));
+    return (3*pow(x,2) + 2*x);
+}
+double fun3(double t)
+{
+    return (t-fun(t)/fun2(t));
 }
 int z()
 {
@@ -20,27 +24,27 @@ int z()
     }
     return a;
 }
-float iter()
+float nep()
 {
     float t=(2*z()+1)/2.0;
-    float k,s=g(t),l=0;
-    while (l>=0)
+    float k,s=fun3(t),l=0;
+    while(l>=0)
     {
         if (k==s)
             break;
         k=s;
-        cout<<"Iteration "<<l<<" = "<<s<<endl;
-        s=g(k);
+        cout<<"Iteration "<<l<<" = "<<k<<endl;
+        s=fun3(k);
         l++;
     }
     return s;
 }
 int main()
 {
-    cout<<"Function : x^3 + x^2 - 1"<<endl;
-    cout<<"G = 1/(x+1)^(1/2)"<<endl;
+    cout<<"Function f(x) : x^3 + x^2 - 1"<<endl;
+    cout<<"Function f'(x): 3*x^2 + 2*x"<<endl;
     cout<<"Root lies Between "<<z()<<" and "<<z()+1<<endl;
-    double d=iter();
+    double d=nep();
     cout<<"Root for the above equation is : "<<d<<endl;
     return 0;
 }

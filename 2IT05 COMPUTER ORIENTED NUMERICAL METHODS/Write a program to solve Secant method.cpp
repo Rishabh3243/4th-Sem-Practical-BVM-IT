@@ -3,11 +3,11 @@
 using namespace std;
 float fun(double x)
 {
-    return (pow(x,3) + pow(x,2) -1);
+    return (pow(x,3) - 5*x + 1);
 }
-double g(double x)
+double fun2(double x, double y)
 {
-    return (1/(sqrt(x+1)));
+    return (x*fun(y)-y*fun(x))/(fun(y)-fun(x));
 }
 int z()
 {
@@ -20,27 +20,26 @@ int z()
     }
     return a;
 }
-float iter()
+float secant()
 {
-    float t=(2*z()+1)/2.0;
-    float k,s=g(t),l=0;
-    while (l>=0)
+    float m,l=0,x=z(),y=1+z();
+    while(l>=0)
     {
-        if (k==s)
+        if (x==y)
             break;
-        k=s;
-        cout<<"Iteration "<<l<<" = "<<s<<endl;
-        s=g(k);
+        m=y;
+        y=fun2(x,y);
+        cout<<"Iteration "<<l<<" = "<<y<<endl;
+        x=m;
         l++;
     }
-    return s;
+    return x;
 }
 int main()
 {
-    cout<<"Function : x^3 + x^2 - 1"<<endl;
-    cout<<"G = 1/(x+1)^(1/2)"<<endl;
+    cout<<"Function f(x) : x^3 - 5*x + 1"<<endl;
     cout<<"Root lies Between "<<z()<<" and "<<z()+1<<endl;
-    double d=iter();
+    double d=secant();
     cout<<"Root for the above equation is : "<<d<<endl;
     return 0;
 }
